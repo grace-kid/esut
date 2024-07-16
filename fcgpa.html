@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <title>F.C.G.P Calculator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body ng-controller="myCtrl"  class="bg-gradient-to-r text-center from-red-500 to-blue-200 m-2 caret-red-700">
+
+<div class="topnav" id="myTopnav">
+  
+  <img src="logo.jpg" alt="logo" class="active w-9 h-9  rounded-full ml-4 mt-3 ">
+  <a href="index.html">G.P</a>
+  <a href="cgpa.html">C.G.P.A</a>
+  <a href="fcgpa.html">F.C.G.P.A</a>
+   <a href="https://portal.esut.edu.ng">Check Result</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars inline"></i>
+  </a>
+</div>
+<div class="bg-gradient-to-r my-3 text-xl from-blue-500 to-red-200 text-center rounded-lg font-bold">
+    
+   ESUT  F.C.G.P.A
+  </div>
+    <form name="myForm" class="bg-gradient-to-r from-blue-200 to-red-300 rounded-lg ">
+        <ul class=" flex-col space-y-2">
+          <h2> lnpu your C.G.P.A</h2>
+          <li><input type="number" name="firstName" ng-model="firstName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
+          <li><input type="number" name="lastName" ng-model="lastName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
+           <li><input type="number" name="input1" ng-model="input1" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+          <li><input type="number" name="input2" ng-model="input2" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+           <li><input type="number" name="input3" ng-model="input3" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+        </ul>
+      <div class="bg-gradient-to-r from-blue-500 my-2 to-red-200 text-center rounded-lg">
+        F.C.G.P.A : <span class=" bg-red-200 ml-3 border border-red-600 rounded-md w-2">{{ getModifiedInputRatio(myForm) | number:1 }}
+ </span>
+    </div>
+        
+    </form>
+  <h2 class="text-blue-600 fixed bottom-0 left-14 text-center"> A product of @grace-tech.com</h2>
+</body>
+<script>
+
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+$scope.firstName = "";
+$scope.lastName = "";
+$scope.input1 = "";
+$scope.input2 = "";
+$scope.input3 = "";
+// Function to count dirty inputs
+$scope.countDirtyInputs = function(form) {
+var count = 0;
+angular.forEach(form, function(input) {
+if (input && input.$dirty) {
+count++;
+}
+});
+return count;
+};
+// Function to calculate the sum of all input values
+$scope.sumInputValues = function() {
+var sum = 0;
+var inputs = [$scope.firstName, $scope.lastName, $scope.input1, $scope.input2, $scope.input3];
+angular.forEach(inputs, function(value) {
+sum += parseFloat(value) || 0; // Convert to float and handle empty strings
+});
+return sum;
+};
+// Function to calculate the ratio of the sum of input values to the number of dirty inputs
+$scope.getModifiedInputRatio = function(form) {
+var dirtyCount = $scope.countDirtyInputs(form);
+var totalCount = $scope.sumInputValues();
+return dirtyCount > 0 ? totalCount / dirtyCount : 0;
+};
+});
+
+
+</script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</html>
