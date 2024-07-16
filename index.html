@@ -1,0 +1,270 @@
+ <!DOCTYPE html>
+<html lang="en" ng-app="myApp" >
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>GP Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <Script src="gp.js"></Script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+
+<div class="topnav" id="myTopnav">
+  <img src="logo.jpg" alt="logo" class="active w-9 h-9  rounded-full ml-4 mt-3 ">
+  <a href="index.html">G.P</a>
+  <a href="cgpa.html">C.G.P.A</a>
+  <a href="fcgpa.html">F.C.G.P.A</a>
+  <a href="https://portal.esut.edu.ng">Check Result</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+<body class="bg-gradient-to-r caret-pink-500 from-red-500 to-blue-200 m-2 " ng-controller="myController">
+  
+        <form action="post" data-ng-app data-ng-init="" class="flex justify-center">
+           
+            <table class="border-separate md-border-spacing-5 text-gray-700 border border-red-500 rounded-lg">
+              <caption class="bg-gradient-to-r my-3 text-xl from-blue-500 to-red-200 text-center font-bold rounded-lg">
+                     ESUT G.P Calculator
+              </caption>
+              <thead>
+                  <tr>
+                    <th>COURSE</td>
+                    <th>UNIT</td>
+                    <th>GRADE</td>
+                    <th>C.U</td>
+                  </tr>
+                </thead>
+                <tr class="center">
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont1"></td>
+                    <td><select id="mySelect" ng-model="grad1" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" >
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont1 * grad1}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont2"></td>
+                    <td><select id="mySelect" ng-model="grad2"  class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont2 * grad2}}"  ></td>
+
+                </tr>
+           
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont3"></td>
+                    <td><select id="mySelect" ng-model="grad3" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont3 * grad3}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont4"></td>
+                    <td><select id="mySelect" ng-model="grad4" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont4 * grad4}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont5"></td>
+                    <td><select id="mySelect" ng-model="grad5" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont5 * grad5}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont6"></td>
+                    <td><select id="mySelect" ng-model="grad6" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont6 * grad6}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont7"></td>
+                    <td><select id="mySelect" ng-model="grad7" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont7 * grad7}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input    class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont8"></td>
+                    <td><select id="mySelect" ng-model="grad8" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont8 * grad8}}"  ></td>
+
+                </tr>
+            
+                <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont9"></td>
+                    <td><select id="mySelect" ng-model="grad9"  class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td ><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" value="{{ piont9 * grad9}}"  ></td>
+
+
+                </tr>
+              <tr>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="text"  ></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" ng-model="piont10"></td>
+                    <td><select id="mySelect" ng-model="grad10" class="w-16 md:w-50 border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg">
+                        <option value="5"ng-model="5">A</option>
+                        <option value="4" ng-model="4">B</option>
+                        <option value="3" ng-model="3">C</option>
+                        <option value="2" ng-model="2">D</option>
+                        <option value="1" ng-model="1">E</option>
+                        <option value="0" ng-model="0">F</option>
+                      </select></td>
+                    <td><input class="w-16 md:w-auto border border-red-500  bg-red-200  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"  type="number" 
+                      value="{{ piont10 * grad10}}"  ></td>
+
+
+                </tr>
+                <tr class=" ">
+                  
+                    <td><input class="w-16 md:w-auto border bg-blue-200 border-blue-600" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-full border border-red-500" type="text" value="CU" ></td>
+                  <td><input class="w-16 md:w-auto border bg-blue-200 border-blue-500" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-full border border-red-500" type="number" value="{{ pionty()}}" ></td>
+                    <td><select class="w-16 bg-blue-200 border border-blue-600 "><option>GP</option></select></td>
+                    <td><input class="w-16 md:w-auto border bg-blue-200 border-blue-500" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-50 border border-red-500" class="w-16 md:w-full border border-red-500" type="number"  value="{{ gradt() }}"></td>
+                 
+                </tr>
+              <caption class="caption-bottom my-2 bg-red-400">
+                
+              </caption>
+            </table>
+        </form>
+  <div class="bg-gradient-to-r from-blue-500 to-red-200 text-center rounded-lg">
+        G.P: <span class=" bg-red-200 ml-3 border border-red-600 rounded-md w-2">{{combineValues()}}</span>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script> 
+        var app = angular.module('myApp', []);
+
+app.controller('myController', function($scope) {
+    // piont variables
+    $scope.piont1 = "";
+    $scope.piont2 = "";
+    $scope.piont3 = "";
+    $scope.piont4 = "";
+    $scope.piont5 = "";
+    $scope.piont6 = "";
+    $scope.piont7 = "";
+    $scope.piont8 = "";
+    $scope.piont9 = "";
+    $scope.piont10 = "";
+
+    // grad variables
+    $scope.grad1 = "";
+    $scope.grad2 = "";
+    $scope.grad3 = "";
+    $scope.grad4 = "";
+    $scope.grad5 = "";
+    $scope.grad6 = "";
+    $scope.grad7 = "";
+    $scope.grad8 = "";
+    $scope.grad9 = "";
+    $scope.grad10 = "";
+
+    // pionty function
+    $scope.pionty = function() {
+        return $scope.piont1 + $scope.piont2 + $scope.piont3 + $scope.piont4 + $scope.piont5 + $scope.piont6 + $scope.piont7 + $scope.piont8 + $scope.piont9 + $scope.piont10;
+    };
+
+    // gradt function
+    $scope.gradt = function() {
+        return (parseFloat($scope.grad1 * $scope.piont1) || 0) + (parseFloat($scope.grad2 * $scope.piont2) || 0) + (parseFloat($scope.grad3 * $scope.piont3) || 0) + (parseFloat($scope.grad4 * $scope.piont4) || 0) + (parseFloat($scope.grad5 * $scope.piont5) || 0) + (parseFloat($scope.grad6 * $scope.piont6) || 0) + 
+               (parseFloat($scope.grad7 * $scope.piont7) || 0) + (parseFloat($scope.grad8 * $scope.piont8) || 0) + (parseFloat($scope.grad9 * $scope.piont9) || 0) + (parseFloat($scope.grad10 * $scope.piont10) || 0);
+    };
+  $scope.combineValues = function() {
+        var piontyResult = $scope.pionty();
+        var gradtResult = $scope.gradt();
+        return piontyResult ? gradtResult / parseFloat(piontyResult) : 0;
+    };
+});
+
+    </script>
+            <script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+            
+    </div>
+  <h2 class="text-blue-600 fixed bottom-0 left-14 text-center"> A product of @grace-tech.com</h2>
+</body>
+</html>
