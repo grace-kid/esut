@@ -24,7 +24,7 @@
 </div>
 <body class="bg-gradient-to-r caret-pink-500 from-red-500 to-blue-200 m-2 " ng-controller="myController">
   
-        <form action="post" data-ng-app data-ng-init="" class="flex justify-center">
+        <form action="post" data-ng-app data-ng-init="" class="flex justify-center z-4">
            
             <table class="border-separate md-border-spacing-5 text-gray-700 border border-red-500 rounded-lg">
               <caption class="bg-gradient-to-r my-3 text-xl from-blue-500 to-red-200 text-center font-bold rounded-lg">
@@ -203,7 +203,7 @@
               </caption>
             </table>
         </form>
-  <div class="bg-gradient-to-r from-blue-500 to-red-200 text-center rounded-lg">
+  <div class="bg-gradient-to-r from-blue-500 to-red-200 z-0 text-center rounded-lg">
         G.P: <span class=" bg-red-200 ml-3 border border-red-600 rounded-md w-2">{{combineValues()}}</span>
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
@@ -265,6 +265,6 @@ function myFunction() {
 </script>
             
     </div>
-  <h2 class="text-blue-600 fixed bottom-0 left-14 text-center"> A product of @grace-tech.com</h2>
-</body>
+    <h2 class="text-blue-700 z-0 text-xs mt-9 bottom-0 left-14 text-center"> A product of @samson(grace-tech.com)</h2>
+  </body>
 </html>
