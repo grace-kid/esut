@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body ng-controller="myCtrl"  class="bg-gradient-to-r text-center from-red-500 to-blue-200 m-2 caret-red-700">
+<body ng-controller="myCtrl"  class="bg-gradient-to-r  from-red-500 to-blue-200 m-2 caret-red-700">
 
 <div class="topnav" id="myTopnav">
   
@@ -27,14 +27,17 @@
     
    ESUT  F.C.G.P.A
   </div>
-    <form name="myForm" class="bg-gradient-to-r from-blue-200 to-red-300 rounded-lg ">
+    <form name="myForm" class="bg-gradient-to-r z-4 text-center from-blue-200 to-red-300 rounded-lg ">
         <ul class=" flex-col space-y-2">
           <h2> lnpu your C.G.P.A</h2>
-          <li><input type="number" name="firstName" ng-model="firstName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
-          <li><input type="number" name="lastName" ng-model="lastName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
+           <li><input type="number" name="firstName" ng-model="firstName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
+           <li><input type="number" name="lastName" ng-model="lastName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
            <li><input type="number" name="input1" ng-model="input1" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
-          <li><input type="number" name="input2" ng-model="input2" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+           <li><input type="number" name="input2" ng-model="input2" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
            <li><input type="number" name="input3" ng-model="input3" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+           <li><input type="number" name="input4" ng-model="input4" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+           <li><input type="number" name="input5" ng-model="input5" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
+           <li><input type="number" name="input6" ng-model="input6" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
         </ul>
       <div class="bg-gradient-to-r from-blue-500 my-2 to-red-200 text-center rounded-lg">
         F.C.G.P.A : <span class=" bg-red-200 ml-3 border border-red-600 rounded-md w-2">{{ getModifiedInputRatio(myForm) | number:1 }}
@@ -42,8 +45,8 @@
     </div>
         
     </form>
-  <h2 class="text-blue-600 fixed bottom-0 left-14 text-center"> A product of @grace-tech.com</h2>
-</body>
+    <h2 class="text-blue-700 z-0 text-xs mt-9 bottom-0 left-14 text-center"> A product of @samson(grace-tech.com)</h2>
+  </body>
 <script>
 
 var app = angular.module('myApp', []);
@@ -53,6 +56,9 @@ $scope.lastName = "";
 $scope.input1 = "";
 $scope.input2 = "";
 $scope.input3 = "";
+$scope.input4 = "";
+$scope.input5 = "";
+$scope.input6 = "";
 // Function to count dirty inputs
 $scope.countDirtyInputs = function(form) {
 var count = 0;
@@ -66,7 +72,7 @@ return count;
 // Function to calculate the sum of all input values
 $scope.sumInputValues = function() {
 var sum = 0;
-var inputs = [$scope.firstName, $scope.lastName, $scope.input1, $scope.input2, $scope.input3];
+var inputs = [$scope.firstName, $scope.lastName, $scope.input1, $scope.input2, $scope.input3, $scope.input4, $scope.input5, $scope.input6];
 angular.forEach(inputs, function(value) {
 sum += parseFloat(value) || 0; // Convert to float and handle empty strings
 });
@@ -94,3 +100,4 @@ function myFunction() {
 </script>
 
 </html>
+
