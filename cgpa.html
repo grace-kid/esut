@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="style.css">
 
 </head>
-<body ng-controller="myCtrl"  class="bg-gradient-to-r from-red-500 to-blue-200 m-2 text-center caret-pink-500">
+<body ng-controller="myCtrl"  class="bg-gradient-to-r from-red-500 to-blue-200 m-2 caret-pink-500">
 
 <div class="topnav" id="myTopnav">
-  <img src="logo.jpg" alt="logo" class="active w-8 h-8  rounded-full ml-4 mt-3 ">
+  <img src="logo.jpg" alt="logo" class="active w-9 h-9  rounded-full ml-4 mt-3 ">
   <a href="index.html">G.P</a>
   <a href="cgpa.html">C.G.P.A</a>
   <a href="fcgpa.html">F.C.G.P.A</a>
@@ -26,7 +26,7 @@
     
    ESUT  C.G.P.A Calculator
    </div>
-    <form name="myForm" class="bg-gradient-to-r from-blue-200 to-red-300 rounded-lg">
+    <form name="myForm" class="bg-gradient-to-r from-blue-200 z-10 text-center to-red-300 rounded-lg">
         <ul class=" flex-col space-y-2">
           <h2> lnpu your G.P.A</h2>
           <li><input type="number" name="firstName" ng-model="firstName" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg"></li> 
@@ -41,13 +41,13 @@
            <li><input type="number" name="input3x" ng-model="input3x" class="w-16 md:w-auto border bg-red-200 border-red-500  focus:outline-none focus:ring focus:border-blue-500 hover:bg-blue-200 rounded-lg" ></li> 
         
         </ul>
-      <div class="bg-gradient-to-r my-2 from-blue-500 to-red-200 text-center rounded-lg">
+      <div class="bg-gradient-to-r my-2 z-10 from-blue-500 to-red-200 text-center rounded-lg">
         C.G.P.A : <span class=" bg-red-200 ml-3 border border-red-600 rounded-md w-2">{{ getModifiedInputRatio(myForm) | number:2 }}
  </span>
     </div>
         
     </form>
-  <h2 class="text-blue-600 fixed bottom-0 left-14 text-center"> A product of @grace-tech.com</h2>
+  <h2 class="text-blue-700 z-0 text-xs mt-9  bottom-0 left-14 text-center"> A product of @samson(grace-tech.com)</h2>
 </body>
 <script>
 
